@@ -1,0 +1,9 @@
+# ninja log v6
+7	446	7749572167517798	CMakeFiles/Web.dir/env/Environment.cpp.obj	e0204305a6cb5818
+9	1252	7749742563701825	CMakeFiles/Web.dir/main.cpp.obj	36f96179483fe07d
+1253	1589	7749742576143102	Web.exe	eff17307ca0b5ed
+104	609	7749110843833344	CMakeFiles/Web.dir/Server/Subserver.cpp.obj	bd8fd895e3bd939e
+139	1886	7749740465896407	CMakeFiles/Web.dir/Server/SubServer.cpp.obj	816b38a408d28d9a
+65	2153	7749740465152202	CMakeFiles/Web.dir/Server/Server.cpp.obj	f4ea10ed94305f06
+215	1869	7749740466652267	CMakeFiles/Web.dir/Env/Environment.cpp.obj	7a455392c3d495ff
+2	555	7749742898306782	build.ninja	b8856e5bc216a866
