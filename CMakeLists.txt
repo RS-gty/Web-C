@@ -12,4 +12,8 @@ add_executable(Web main.cpp
         Server/SubServer.cpp
         Env/Environment.cpp
         Env/Environment.h
-        Server/Host.cpp)
+        Server/Host.cpp
+        Signal/Signal.cpp
+        Signal/Signal.h
+        Algorithm/BinaryTree/BinaryTree.cpp
+        Algorithm/BinaryTree/BinaryTree.h)

@@ -15,41 +15,33 @@ using namespace Eigen;
 
 class Server {
 public:
-    Server(Vector3d pos);
+    explicit Server(Vector3d pos);
     Server(double x, double y, double z);
-
     string get_id();
-
 private:
-
-
 protected:
     Vector3d position;
     string identifier;
-};
-
-class Host : public Server {
-public:
-    Host(Vector3d pos, double er);
-
-    void RegisterServer();
-    bool isAccessible(const Vector3d &sp);
-
-
-private:
-    double env_radius;
-    Environment env;
-
-
-    struct subserver{
-        string identifier;
-    };
-    vector<subserver> subServers;
 };
 
 class SubServer : public Server {
 public:
 private:
 };
+
+class Host : public Server {
+public:
+    Host(Vector3d pos, double er);
+    Host(double x, double y, double z, double er);
+    void RegisterServer();
+    bool isAccessible(const Vector3d &sp);
+private:
+    double env_radius;
+    Environment env;
+
+    vector<SubServer> subServers;
+};
+
+
 
 #endif// WEB_SERVER_H

@@ -84,6 +84,20 @@ build CMakeFiles/Web.dir/Server/Host.cpp.obj: CXX_COMPILER__Web_unscanned_Debug 
   OBJECT_DIR = CMakeFiles\Web.dir
   OBJECT_FILE_DIR = CMakeFiles\Web.dir\Server
 
+build CMakeFiles/Web.dir/Signal/Signal.cpp.obj: CXX_COMPILER__Web_unscanned_Debug E$:/Programs/C++/Web/Signal/Signal.cpp || cmake_object_order_depends_target_Web
+  DEP_FILE = CMakeFiles\Web.dir\Signal\Signal.cpp.obj.d
+  FLAGS = -g -std=gnu++2a -fdiagnostics-color=always
+  INCLUDES = -IE:/Programs/C++/libs/boost_1_88_0 -IE:/Programs/C++/libs/eigen-3.4.0
+  OBJECT_DIR = CMakeFiles\Web.dir
+  OBJECT_FILE_DIR = CMakeFiles\Web.dir\Signal
+
+build CMakeFiles/Web.dir/Algorithm/BinaryTree/BinaryTree.cpp.obj: CXX_COMPILER__Web_unscanned_Debug E$:/Programs/C++/Web/Algorithm/BinaryTree/BinaryTree.cpp || cmake_object_order_depends_target_Web
+  DEP_FILE = CMakeFiles\Web.dir\Algorithm\BinaryTree\BinaryTree.cpp.obj.d
+  FLAGS = -g -std=gnu++2a -fdiagnostics-color=always
+  INCLUDES = -IE:/Programs/C++/libs/boost_1_88_0 -IE:/Programs/C++/libs/eigen-3.4.0
+  OBJECT_DIR = CMakeFiles\Web.dir
+  OBJECT_FILE_DIR = CMakeFiles\Web.dir\Algorithm\BinaryTree
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Web
@@ -92,7 +106,7 @@ build CMakeFiles/Web.dir/Server/Host.cpp.obj: CXX_COMPILER__Web_unscanned_Debug 
 #############################################
 # Link the executable Web.exe
 
-build Web.exe: CXX_EXECUTABLE_LINKER__Web_Debug CMakeFiles/Web.dir/main.cpp.obj CMakeFiles/Web.dir/Server/Server.cpp.obj CMakeFiles/Web.dir/Server/SubServer.cpp.obj CMakeFiles/Web.dir/Env/Environment.cpp.obj CMakeFiles/Web.dir/Server/Host.cpp.obj
+build Web.exe: CXX_EXECUTABLE_LINKER__Web_Debug CMakeFiles/Web.dir/main.cpp.obj CMakeFiles/Web.dir/Server/Server.cpp.obj CMakeFiles/Web.dir/Server/SubServer.cpp.obj CMakeFiles/Web.dir/Env/Environment.cpp.obj CMakeFiles/Web.dir/Server/Host.cpp.obj CMakeFiles/Web.dir/Signal/Signal.cpp.obj CMakeFiles/Web.dir/Algorithm/BinaryTree/BinaryTree.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Web.dir
