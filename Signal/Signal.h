@@ -16,14 +16,13 @@ public:
     void set_origin(Vector3d pos);
     void set_origin(double x, double y, double z);
     void fade();
+
 private:
 protected:
     double amplitude;
     double frequency;
     double phase;
     Vector3d position;
-
-
 };
 
 

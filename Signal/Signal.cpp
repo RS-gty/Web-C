@@ -4,8 +4,8 @@
 
 #include "Signal.h"
 #include <Eigen/Dense>
-#include <utility>
 #include <iostream>
+#include <utility>
 
 
 Signal::Signal(double amp, double fre, double phi) {
@@ -25,5 +25,6 @@ void Signal::fade() {
     std::cout << "fade" << std::endl;
     delete this;
 }
+
 Signal::~Signal() {
 }

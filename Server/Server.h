@@ -5,10 +5,10 @@
 #ifndef WEB_SERVER_H
 #define WEB_SERVER_H
 
+#include "../Env/Environment.h"
 #include <Eigen/Dense>
 #include <string>
 #include <vector>
-#include "../Env/Environment.h"
 
 using namespace std;
 using namespace Eigen;
@@ -18,6 +18,7 @@ public:
     explicit Server(Vector3d pos);
     Server(double x, double y, double z);
     string get_id();
+
 private:
 protected:
     Vector3d position;
@@ -35,13 +36,13 @@ public:
     Host(double x, double y, double z, double er);
     void RegisterServer();
     bool isAccessible(const Vector3d &sp);
+
 private:
     double env_radius;
     Environment env;
 
     vector<SubServer> subServers;
 };
-
 
 
 #endif// WEB_SERVER_H

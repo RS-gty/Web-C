@@ -28,4 +28,3 @@ Server::Server(double x, double y, double z) {
 string Server::get_id() {
     return identifier;
 }
-

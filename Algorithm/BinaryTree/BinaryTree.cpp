@@ -24,6 +24,14 @@ void GrowBinaryTree(BinaryTree &Tree, string data) {
         }
     }
 }
+void AppendBinaryTree(BinaryTree &Tree, string data) {
+    if (Tree->newly) {
+        CreateBinaryTree(Tree, data);
+        Tree->newly = false;
+    } else {
+        GrowBinaryTree(Tree, data);
+    }
+}
 void PreOrderTraverse(BinaryTree Tree) {
     if (Tree) {
         cout << Tree->data << endl;
@@ -65,17 +73,11 @@ void DeleteData(BinaryTree Tree, const string &data) {
     }
 }
 
-BinaryTree SetBinaryTree(vector<string> v_data){
-    BinaryTree Tree;
+BinaryTree SetBinaryTree(vector<string> v_data) {
+    BinaryTree Tree = new BinaryNode();
     bool trigger = true;
-    for (vector<string>::iterator iter = v_data.begin(); iter != v_data.end(); iter++){
-        if (trigger){
-            CreateBinaryTree(Tree, *iter);
-            trigger = false;
-        } else{
-            GrowBinaryTree(Tree, *iter);
-        }
-
+    for (vector<string>::iterator iter = v_data.begin(); iter != v_data.end(); iter++) {
+        AppendBinaryTree(Tree, *iter);
     }
     return Tree;
 }

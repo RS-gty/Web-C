@@ -18,7 +18,7 @@ Host::Host(Vector3d pos, double er) : Server(std::move(pos)) {
     env_radius = er;
     env = Environment(er, position);
 }
-Host::Host(double x, double y, double z, double er) : Server(x, y, z){
+Host::Host(double x, double y, double z, double er) : Server(x, y, z) {
     env_radius = er;
     env = Environment(er, position);
 }
