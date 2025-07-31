@@ -13,22 +13,13 @@ using namespace Eigen;
 
 class Environment {
 public:
-    Environment(double r, Vector3d o);
     Environment();
-
-    void addSignal(Signal s){
-
-    }
+    void addSignal(const Signal& s){};
 
 private:
-    double radius{};
-    Vector3d origin;
+    BinaryTree SubServers = new BinaryNode();
+    BinaryTree Hosts = new BinaryNode();
     BinaryTree Signals = new BinaryNode();
-};
-
-class Universe : public Environment{
-public:
-    Universe();
 };
 
 

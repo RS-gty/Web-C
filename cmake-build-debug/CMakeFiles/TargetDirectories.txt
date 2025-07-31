@@ -1,3 +1,3 @@
-E:/Programs/C++/Web/cmake-build-debug/CMakeFiles/Web.dir
-E:/Programs/C++/Web/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Programs/C++/Web/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Projects/C++/Web/cmake-build-debug/CMakeFiles/Web.dir
+D:/Projects/C++/Web/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Projects/C++/Web/cmake-build-debug/CMakeFiles/rebuild_cache.dir

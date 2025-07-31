@@ -9,6 +9,8 @@
 
 using namespace Eigen;
 
+typedef long long int lint;
+
 class Signal {
 public:
     Signal(double amp, double fre, double phi);
@@ -16,12 +18,15 @@ public:
     void set_origin(Vector3d pos);
     void set_origin(double x, double y, double z);
     void fade();
+    Vector3d get_origin();
 
 private:
 protected:
     double amplitude;
     double frequency;
     double phase;
+    lint start_frame;
+    lint duration;
     Vector3d position;
 };
 

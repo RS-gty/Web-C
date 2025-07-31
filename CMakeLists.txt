@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.28)
 project(Web)
 
-include_directories("E:\\Programs\\C++\\libs\\boost_1_88_0")
-include_directories("E:\\Programs\\C++\\libs\\eigen-3.4.0")
+include_directories("D:\\Projects\\C++\\libs\\boost_1_88_0")
+include_directories("D:\\Projects\\C++\\libs\\eigen-3.4.0")
 
 set(CMAKE_CXX_STANDARD 26)
 
@@ -17,4 +17,5 @@ add_executable(Web main.cpp
         Signal/Signal.h
         Algorithm/BinaryTree/BinaryTree.cpp
         Algorithm/BinaryTree/BinaryTree.h
-        Env/Universe.cpp)
+        utils/utils.cpp
+        utils/utils.h)

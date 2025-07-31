@@ -32,16 +32,11 @@ private:
 
 class Host : public Server {
 public:
-    Host(Vector3d pos, double er);
-    Host(double x, double y, double z, double er);
+    Host(Vector3d pos);
+    Host(double x, double y, double z);
     void RegisterServer();
-    bool isAccessible(const Vector3d &sp);
 
 private:
-    double env_radius;
-    Environment env;
-
-    vector<SubServer> subServers;
 };
 
 

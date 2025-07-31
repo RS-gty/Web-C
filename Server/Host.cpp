@@ -10,15 +10,5 @@
 void Host::RegisterServer() {
 }
 
-bool Host::isAccessible(const Vector3d &sp) {
-    return ((sp - position).norm() < env_radius);
-}
-
-Host::Host(Vector3d pos, double er) : Server(std::move(pos)) {
-    env_radius = er;
-    env = Environment(er, position);
-}
-Host::Host(double x, double y, double z, double er) : Server(x, y, z) {
-    env_radius = er;
-    env = Environment(er, position);
-}
+Host::Host(Vector3d pos) : Server(std::move(pos)) {}
+Host::Host(double x, double y, double z) : Server(x, y, z) {}

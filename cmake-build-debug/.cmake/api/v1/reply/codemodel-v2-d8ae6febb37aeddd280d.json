@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Web::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Web-Debug-0e5f2d517dbe5a5d6e57.json",
+					"jsonFile" : "target-Web-Debug-817b623b59b35f2cb304.json",
 					"name" : "Web",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/Programs/C++/Web/cmake-build-debug",
-		"source" : "E:/Programs/C++/Web"
+		"build" : "D:/Projects/C++/Web/cmake-build-debug",
+		"source" : "D:/Projects/C++/Web"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 6
+		"minor" : 7
 	}
 }

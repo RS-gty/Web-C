@@ -51,18 +51,18 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++2a -fdiagnostics-color=always"
+					"fragment" : "-g -std=gnu++23 -fdiagnostics-color=always"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "E:/Programs/C++/libs/boost_1_88_0"
+					"path" : "D:/Projects/C++/libs/boost_1_88_0"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "E:/Programs/C++/libs/eigen-3.4.0"
+					"path" : "D:/Projects/C++/libs/eigen-3.4.0"
 				}
 			],
 			"language" : "CXX",
@@ -137,7 +137,8 @@
 				2,
 				5,
 				8,
-				10
+				10,
+				12
 			]
 		}
 	],
@@ -208,8 +209,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Env/Universe.cpp",
+			"path" : "utils/utils.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "utils/utils.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

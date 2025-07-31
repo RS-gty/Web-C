@@ -7,6 +7,8 @@
 #include <iostream>
 #include <utility>
 
+using namespace Eigen;
+
 
 Signal::Signal(double amp, double fre, double phi) {
     amplitude = amp;
@@ -24,6 +26,10 @@ void Signal::set_origin(double x, double y, double z) {
 void Signal::fade() {
     std::cout << "fade" << std::endl;
     delete this;
+}
+
+Eigen::Vector3d Signal::get_origin() {
+    return position;
 }
 
 Signal::~Signal() {

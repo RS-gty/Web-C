@@ -7,8 +7,5 @@
 #include <utility>
 
 
-Environment::Environment(double r, Vector3d o) {
-    radius = r;
-    origin = std::move(o);
-}
-Environment::Environment() = default;
+Environment::Environment() {
+};
