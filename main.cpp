@@ -38,7 +38,6 @@ int main() {
 
     cout << p1.position << endl;
 
-
     /*
     Environment env;
 
