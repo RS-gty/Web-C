@@ -1,0 +1,31 @@
+//
+// Created by ADMIN on 25-7-23.
+//
+
+#ifndef WEB_ENVIRONMENT_H
+#define WEB_ENVIRONMENT_H
+
+#include "../Algorithm/BinaryTree/BinaryTree.h"
+#include <Eigen/Dense>
+#include <string>
+#include <iostream>
+#include <queue>
+
+using namespace Eigen;
+using namespace std;
+
+class Environment {
+public:
+    Environment();
+    void AppendSignal(string signal);
+    void ScanSignals();
+    int frame = 0;
+
+    void Update();
+private:
+    BinaryTree signal_storage = new BinaryNode();
+
+};
+
+
+#endif//WEB_ENVIRONMENT_H
