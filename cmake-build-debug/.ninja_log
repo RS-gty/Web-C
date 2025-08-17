@@ -1,0 +1,11 @@
+# ninja log v6
+12	1110	7753394188869574	CMakeFiles/Web.dir/Server/Host.cpp.obj	d4f9a319d5b252a8
+9	1480	7753394818898993	CMakeFiles/Web.dir/main.cpp.obj	2f6adcef4c2aa978
+16	479	7753394188919628	CMakeFiles/Web.dir/Algorithm/BinaryTree/BinaryTree.cpp.obj	ded4381995d7b50f
+1480	1618	7753394833609000	Web.exe	7054fdccfcb47fe6
+6	1607	7753394188813644	CMakeFiles/Web.dir/Server/Server.cpp.obj	d971b4aaca7e4c2
+8	1108	7753394188833623	CMakeFiles/Web.dir/Server/SubServer.cpp.obj	6eb559ef7cf2db97
+10	1143	7753394188853627	CMakeFiles/Web.dir/Env/Environment.cpp.obj	63aebd23d1112b3
+4	206	7753412992407771	build.ninja	31ab94f2adaea594
+14	1110	7753394188899638	CMakeFiles/Web.dir/Signal/Signal.cpp.obj	7548ad9c5881c1f8
+19	1006	7753394188939631	CMakeFiles/Web.dir/utils/utils.cpp.obj	5dc84a940f12fec0
