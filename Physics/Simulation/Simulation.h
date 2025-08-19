@@ -18,6 +18,8 @@ public:
 
     vector<Particle*> particles;
     vector<Field*> fields;
+    double delta = 0.001;
+    long long int iteration = 0;
 
     void appendField(Field *field);
     void appendField(vector<Field*> fields);
@@ -25,8 +27,7 @@ public:
     void appendParticle(Particle &particle);
     void appendParticle(vector<Particle*> particles);
 
-
-    void simulate_begin(bool &running, double delta);
+    void update();
 };
 
 

@@ -9,4 +9,5 @@ Particle::Particle(double mass, Vector3d position, Vector3d velocity, double cha
     this->position = move(position);
     this->velocity = move(velocity);
     this->charge = charge;
+    this->position_ptr = &this->position;
 }

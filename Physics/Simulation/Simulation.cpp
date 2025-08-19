@@ -23,18 +23,14 @@ void Simulation::appendParticle(vector<Particle*> particles) {
     }
 }
 
-void Simulation::simulate_begin(bool &running, double delta) {
-    int iter = 0;
-    while (running) {
-        for (auto p_iter = particles.begin(); p_iter != particles.end(); p_iter++) {
-            (*p_iter)->acceleration = Vector3d::Zero();
-            for (auto* f_iter : fields) {
-                (*p_iter)->acceleration += f_iter->getForce(**p_iter);
-            }
-            (*p_iter)->velocity += (*p_iter)->acceleration * delta;
-            (*p_iter)->position += (*p_iter)->velocity * delta;
+void Simulation::update() {
+    for (auto p_iter = particles.begin(); p_iter != particles.end(); p_iter++) {
+        (*p_iter)->acceleration = Vector3d::Zero();
+        for (auto* f_iter : fields) {
+            (*p_iter)->acceleration += f_iter->getForce(**p_iter) / (*p_iter)->mass;
         }
-        iter++;
-        if (iter == 1000){running = false;}
+        (*p_iter)->velocity += (*p_iter)->acceleration * delta;
+        (*p_iter)->position += (*p_iter)->velocity * delta;
     }
+    iteration++;
 }

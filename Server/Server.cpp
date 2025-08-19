@@ -17,6 +17,8 @@ Server::Server(Environment &env, Vector3d pos) {
     env.AppendSignal(signal);
 
     position = std::move(pos);
+
+    position_ptr = &position;
 }
 
 
@@ -30,6 +32,8 @@ Server::Server(Environment &env, double x, double y, double z) {
     env.AppendSignal(signal);
 
     position = Vector3d(x, y, z);
+
+    position_ptr = &position;
 }
 
 void Server::RandomlizeID() {
@@ -38,6 +42,14 @@ void Server::RandomlizeID() {
 
 void Server::SetSignal(double amp, double fre, double phi) {
     this->signal.set_properties(amp, fre, phi);
+}
+
+void Server::BindPosition(Particle &particle) {
+    this->position_ptr = particle.position_ptr;
+}
+
+Vector3d Server::getPosition() {
+    return *this->position_ptr;
 }
 
 string Server::get_id() {

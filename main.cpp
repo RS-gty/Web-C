@@ -18,30 +18,74 @@ atomic<bool> running = true;
 queue<std::string> commands;
 mutex queue_mutex;
 
+void input_thread() {
+    std::string cmd;
+    while (running) {
+        std::cout << "Enter command: ";
+        std::getline(std::cin, cmd);
+
+        std::lock_guard<std::mutex> lock(queue_mutex);
+        commands.push(cmd);
+
+        if (cmd == "exit") running = false;
+    }
+}
+
+void simulate_begin(Simulation &sim) {
+    std::thread input_handler(input_thread);
+
+    while (running) {
+        // 主循环的工作
+        sim.update();
+
+        // 处理输入命令
+        std::lock_guard<std::mutex> lock(queue_mutex);
+        while (!commands.empty()) {
+            std::string cmd = commands.front();
+            commands.pop();
+
+            if (cmd == "help") {
+                std::cout << "Available commands: help, status, exit\n";
+            } else if (cmd == "status") {
+                std::cout << "System is running...\n";
+            }
+            // 处理其他命令...
+        }
+    }
+
+    input_handler.join();
+    std::cout << "Program terminated\n";
+}
+
 int main() {
-    Particle p1(1, {1, 2, 3}, {0, 0, 0});
+    Particle p1(1, {1, 2, 3}, {1, 0, 0}, 1);
 
     ConstGravityField G1(10, {0, 0, -1});
+    MagneticField M1(1, {0, 0, 1});
+    GravityField G2(5, {1, 0, 2});
 
-    std::vector<Field*> fs;
+    Environment env;
 
+    Host h1(env, 1, -1234, 3);
 
+    h1.BindPosition(p1);
 
 
     Simulation simulation{};
-    simulation.appendField(&G1);
+    simulation.appendField(&G2);
     simulation.appendParticle(p1);
 
     bool running = true;
 
-    simulation.simulate_begin(running, 0.001);
+    simulate_begin(simulation);
 
     cout << p1.position << endl;
+    cout << h1.getPosition() << endl;
 
     /*
     Environment env;
 
-    Host h1(env, 1, 2, 3);
+
 
     Host h2(env, 2, 2, 3);
 

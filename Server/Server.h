@@ -8,6 +8,7 @@
 #include "../Env/Environment.h"
 #include "../Signal/Signal.h"
 #include "../utils/utils.h"
+#include "../Physics/Objects/Particle.h"
 #include <Eigen/Dense>
 #include <string>
 #include <vector>
@@ -23,12 +24,15 @@ public:
     string get_id();
     void SetSignal(double amp, double fre, double phi);
     void RandomlizeID();
+    void BindPosition(Particle &particle);
+    Vector3d getPosition();
 
 private:
 protected:
     Signal signal;
     Environment *env;
     Vector3d position;
+    Vector3d *position_ptr;
     string identifier;
 };
 

@@ -17,6 +17,7 @@ public:
     double mass;
     double charge;
     Vector3d position;
+    Vector3d *position_ptr;
     Vector3d velocity;
     Vector3d acceleration;
 };
