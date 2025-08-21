@@ -12,13 +12,16 @@ Server::Server(Environment &env, Vector3d pos) {
 
     identifier = RandomUUID();
 
-    auto *s = new Signal(env, 0, 0, 0, this->identifier);
-    signal = *s;
-    env.AppendSignal(signal);
-
     position = std::move(pos);
 
     position_ptr = &position;
+
+    auto *s = new Signal(env, 0, 0, 0, this->identifier);
+    signal = s;
+    signal->set_origin(this->position_ptr);
+    env.AppendSignal(*signal);
+
+
 }
 
 
@@ -27,13 +30,16 @@ Server::Server(Environment &env, double x, double y, double z) {
 
     identifier = RandomUUID();
 
-    auto *s = new Signal(env, 0, 0, 0, this->identifier);
-    signal = *s;
-    env.AppendSignal(signal);
-
     position = Vector3d(x, y, z);
 
     position_ptr = &position;
+
+    auto *s = new Signal(env, 0, 0, 0, this->identifier);
+    signal = s;
+    signal->set_origin(this->position_ptr);
+    env.AppendSignal(*signal);
+
+
 }
 
 void Server::RandomlizeID() {
@@ -41,11 +47,12 @@ void Server::RandomlizeID() {
 }
 
 void Server::SetSignal(double amp, double fre, double phi) {
-    this->signal.set_properties(amp, fre, phi);
+    this->signal->set_properties(amp, fre, phi);
 }
 
 void Server::BindPosition(Particle &particle) {
     this->position_ptr = particle.position_ptr;
+    this->signal->set_origin(this->position_ptr);
 }
 
 Vector3d Server::getPosition() {

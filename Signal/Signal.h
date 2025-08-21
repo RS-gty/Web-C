@@ -17,7 +17,7 @@ typedef long long int lint;
 
 class Signal {
 public:
-    Signal() = default;
+    Signal();
 
     Signal(Environment &env, double amp, double fre, double phi, string id);
 
@@ -26,11 +26,14 @@ public:
     ~Signal();
 
     void passID(string id);
-    void set_origin(Vector3d pos);
+    void set_origin(Vector3d *pos);
     void set_origin(double x, double y, double z);
     void set_properties(double amp, double fre, double phi);
+
+    double getIntensity();
+
     void fade();
-    Vector3d get_origin();
+    Vector3d* get_origin();
     Signal *get_pointer();
     operator string() const;
     string identifier;
@@ -38,13 +41,13 @@ public:
 private:
 protected:
 
-    Environment exenv;
+    Environment *exenv;
     double amplitude{};
     double frequency{};
     double phase{};
     lint start_frame{};
     lint duration{};
-    Vector3d position;
+    Vector3d *position;
 };
 
 

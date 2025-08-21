@@ -14,12 +14,13 @@ using namespace std;
 
 class Simulation {
 public:
-    Simulation() = default;
+    explicit Simulation(double delta);
 
     vector<Particle*> particles;
     vector<Field*> fields;
     double delta = 0.001;
     long long int iteration = 0;
+    double time = 0; // unit:second
 
     void appendField(Field *field);
     void appendField(vector<Field*> fields);

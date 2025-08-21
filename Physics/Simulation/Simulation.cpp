@@ -4,6 +4,11 @@
 
 #include "Simulation.h"
 
+Simulation::Simulation(double delta) {
+    this->delta = delta;
+}
+
+
 void Simulation::appendField(Field* field) {
     this->fields.push_back(field);
 }

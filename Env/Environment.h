@@ -16,10 +16,10 @@ using namespace std;
 
 class Environment {
 public:
-    Environment();
+    explicit Environment(int &iter);
     void AppendSignal(string signal);
     void ScanSignals();
-    int frame = 0;
+    int *iter;
 
     void Update();
 private:

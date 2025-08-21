@@ -7,8 +7,9 @@
 #include <utility>
 
 
-Environment::Environment() {
+Environment::Environment(int &iter) {
     atomic<bool> running(true);
+    this->iter = &iter;
 };
 
 void Environment::AppendSignal(string signal) {

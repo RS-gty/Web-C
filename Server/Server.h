@@ -29,7 +29,7 @@ public:
 
 private:
 protected:
-    Signal signal;
+    Signal *signal;
     Environment *env;
     Vector3d position;
     Vector3d *position_ptr;

@@ -10,34 +10,37 @@ using namespace Eigen;
 
 
 Signal::Signal(Environment &env, double amp, double fre, double phi, string id) {
-    exenv = env;
+    exenv = &env;
     amplitude = amp;
     frequency = fre;
     phase = phi;
-    start_frame = exenv.frame;
+    start_frame = *exenv->iter;
     identifier = move(id);
 }
 
 
 
-void Signal::set_origin(Vector3d pos) {
-    position = std::move(pos);
+void Signal::set_origin(Vector3d *pos) {
+    position = pos;
 }
 
-void Signal::set_origin(double x, double y, double z) {
-    position = Vector3d(x, y, z);
-}
 void Signal::set_properties(double amp, double fre, double phi) {
     this->amplitude = amp;
     this->frequency = fre;
     this->phase = phi;
 }
+
+double Signal::getIntensity() {
+    return 1.0;
+}
+
+
 void Signal::fade() {
     std::cout << "fade" << std::endl;
     delete this;
 }
 
-Eigen::Vector3d Signal::get_origin() {
+Vector3d* Signal::get_origin() {
     return position;
 }
 Signal *Signal::get_pointer() {
