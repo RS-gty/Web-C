@@ -19,6 +19,7 @@ Server::Server(Environment &env, Vector3d pos) {
     auto *s = new Signal(env, 0, 0, 0, this->identifier);
     signal = s;
     signal->set_origin(this->position_ptr);
+    signal->set_starttime(this->env->getTime());
     env.AppendSignal(*signal);
 
 
@@ -37,6 +38,7 @@ Server::Server(Environment &env, double x, double y, double z) {
     auto *s = new Signal(env, 0, 0, 0, this->identifier);
     signal = s;
     signal->set_origin(this->position_ptr);
+    signal->set_starttime(this->env->getTime());
     env.AppendSignal(*signal);
 
 

@@ -21,14 +21,13 @@ public:
 
     Signal(Environment &env, double amp, double fre, double phi, string id);
 
-
-
     ~Signal();
 
     void passID(string id);
     void set_origin(Vector3d *pos);
     void set_origin(double x, double y, double z);
     void set_properties(double amp, double fre, double phi);
+    void set_starttime(long double st);
 
     double getIntensity();
 
@@ -46,6 +45,7 @@ protected:
     double frequency{};
     double phase{};
     lint start_frame{};
+    long double start_time{};
     lint duration{};
     Vector3d *position;
 };

@@ -12,6 +12,9 @@
 
 using namespace std;
 
+typedef long long int lint;
+typedef long double ld;
+
 atomic<bool> running = true;
 queue<string> commands;
 mutex queue_mutex;
@@ -38,13 +41,14 @@ void input_thread(Simulation &sim) {
     }
 }
 
-void simulate_begin(Simulation &sim, int &iter) {
+void simulate_begin(Simulation &sim, lint &iter, ld &timecounter) {
     thread input_handler(input_thread, ref(sim));
 
     while (running) {
         // 主循环的工作
         sim.update();
         iter++;
+        timecounter += sim.delta;
         // 处理输入命令
         lock_guard<mutex> lock(queue_mutex);
         while (!commands.empty()) {
@@ -69,7 +73,9 @@ void simulate_begin(Simulation &sim, int &iter) {
  *
  */
 
-int global_iterator = 0;
+lint global_iterator = 0;
+ld global_time_counter = 0; // unit:second
+
 
 int main() {
     Particle p1(1, {1, 2, 3}, {1, 0, 0}, 1);
@@ -78,7 +84,7 @@ int main() {
     MagneticField M1(1, {0, 0, 1});
     GravityField G2(5, {1, 0, 2});
 
-    Environment env(global_iterator);
+    Environment env(global_iterator, global_time_counter);
 
     Host h1(env, 1, -1234, 3);
 
@@ -89,7 +95,9 @@ int main() {
     simulation.appendField(&G2);
     simulation.appendParticle(p1);
 
-    simulate_begin(simulation, global_iterator);
+    // TODO: Global_Time_Counter
+
+    simulate_begin(simulation, global_iterator, global_time_counter);
 
     cout << "iteration:" + to_string(simulation.iteration) << endl;
     cout << "position of simulated space station" << endl;

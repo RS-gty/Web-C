@@ -16,10 +16,13 @@ using namespace std;
 
 class Environment {
 public:
-    explicit Environment(int &iter);
+    explicit Environment(long long int &iter, long double &time_counter);
     void AppendSignal(string signal);
     void ScanSignals();
-    int *iter;
+    long double getTime();
+
+    long long int *iter;
+    long double *time_counter;
 
     void Update();
 private:

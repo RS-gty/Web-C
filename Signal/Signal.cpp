@@ -30,6 +30,10 @@ void Signal::set_properties(double amp, double fre, double phi) {
     this->phase = phi;
 }
 
+void Signal::set_starttime(long double st) {
+    this->start_time = st;
+}
+
 double Signal::getIntensity() {
     return 1.0;
 }
