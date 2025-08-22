@@ -29,7 +29,7 @@ public:
     void set_properties(double amp, double fre, double phi);
     void set_starttime(long double st);
 
-    double getIntensity();
+    double getIntensity(long double current_time, Vector3d pos);
 
     void fade();
     Vector3d* get_origin();

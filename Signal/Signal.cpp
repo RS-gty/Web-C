@@ -34,8 +34,14 @@ void Signal::set_starttime(long double st) {
     this->start_time = st;
 }
 
-double Signal::getIntensity() {
-    return 1.0;
+double Signal::getIntensity(long double current_time, Vector3d pos) {
+    double distance = (pos - *this->position).norm();
+    double delta_distance = current_time - this->start_time;
+    if (distance <= delta_distance) {
+        // this->wavelength equals 1 / this->frequency
+        double ext = delta_distance - distance;
+        return this->amplitude * -sin(2 * numbers::pi * ext * this->frequency);
+    } else {return 0;}
 }
 
 

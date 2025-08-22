@@ -95,8 +95,6 @@ int main() {
     simulation.appendField(&G2);
     simulation.appendParticle(p1);
 
-    // TODO: Global_Time_Counter
-
     simulate_begin(simulation, global_iterator, global_time_counter);
 
     cout << "iteration:" + to_string(simulation.iteration) << endl;
