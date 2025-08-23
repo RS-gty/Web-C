@@ -36,7 +36,7 @@ double Signal::getIntensity(long double current_time, Vector3d pos) {
     if (distance <= delta_distance) {
         // this->wavelength equals 1 / this->frequency
         double ext = delta_distance - distance;
-        return this->amplitude * -sin(2 * numbers::pi * ext * this->frequency);
+        return this->amplitude * sin(2 * numbers::pi * ext * this->frequency + this->phase);
     } else {return 0;}
 }
 

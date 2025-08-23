@@ -57,7 +57,7 @@ void Server::BindPosition(Particle &particle) {
     this->signal->set_origin(this->position_ptr);
 }
 
-Vector3d Server::getPosition() {
+Vector3d &Server::getPosition() {
     return *this->position_ptr;
 }
 

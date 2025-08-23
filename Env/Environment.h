@@ -28,7 +28,7 @@ public:
 
     void Update();
 private:
-    vector<Signal> signals = {};
+    vector<Signal*> signals = {};
 
 };
 

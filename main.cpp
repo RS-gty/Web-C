@@ -87,6 +87,7 @@ int main() {
     Environment env(global_iterator, global_time_counter);
 
     Host h1(env, 1, -1234, 3);
+    h1.SetSignal(1, 2, 0);
 
     h1.BindPosition(p1);
 
@@ -96,6 +97,8 @@ int main() {
     simulation.appendParticle(p1);
 
     simulate_begin(simulation, global_iterator, global_time_counter);
+
+    cout << env.getSignalIntensity(h1.getPosition()) << endl;
 
     cout << "iteration:" + to_string(simulation.iteration) << endl;
     cout << "position of simulated space station" << endl;

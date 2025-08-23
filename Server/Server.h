@@ -25,7 +25,8 @@ public:
     void SetSignal(double amp, double fre, double phi);
     void RandomlizeID();
     void BindPosition(Particle &particle);
-    Vector3d getPosition();
+
+    Vector3d &getPosition();
 
 private:
 protected:

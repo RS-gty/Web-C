@@ -20,14 +20,14 @@ long double Environment::getTime() {
 double Environment::getSignalIntensity(Vector3d &position) {
     double signalIntensity = 0;
     for (auto i : this->signals) {
-        signalIntensity += i.getIntensity(*this->time_counter, position);
+        signalIntensity += i->getIntensity(*this->time_counter, position);
     }
     return signalIntensity;
 }
 
 
 void Environment::AppendSignal(Signal &signal) {
-    this->signals.push_back(signal);
+    this->signals.push_back(&signal);
 }
 
 
