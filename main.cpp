@@ -1,3 +1,6 @@
+#define _CRT_STDIO_ISO_WIDE_SPECIFIERS
+#define MGL_STATIC_DEFINE
+
 #include "Algorithm/BinaryTree/BinaryTree.h"
 #include "Env/Environment.h"
 #include "Server/Server.h"
@@ -6,6 +9,8 @@
 #include "Physics/Objects/Particle.h"
 #include "Physics/Fields/Field.h"
 #include "Physics/Simulation/Simulation.h"
+
+
 
 #include <iostream>
 #include <thread>

@@ -3,6 +3,7 @@ project(Web25)
 
 include_directories("D:\\Projects\\C++\\libs\\boost_1_88_0")
 include_directories("D:\\Projects\\C++\\libs\\eigen-3.4.0")
+include_directories("D:\\Projects\\C++\\libs\\opencv-4.12.0")
 
 set(CMAKE_CXX_STANDARD 26)
 

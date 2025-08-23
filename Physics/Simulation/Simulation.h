@@ -23,10 +23,10 @@ public:
     double time = 0; // unit:second
 
     void appendField(Field *field);
-    void appendField(vector<Field*> fields);
+    void appendField(const vector<Field*>& fields);
 
     void appendParticle(Particle &particle);
-    void appendParticle(vector<Particle*> particles);
+    void appendParticle(const vector<Particle*>& particles);
 
     void update();
 };
