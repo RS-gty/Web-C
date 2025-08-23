@@ -17,14 +17,19 @@ long double Environment::getTime() {
     return *this->time_counter;
 }
 
-
-void Environment::AppendSignal(string signal) {
-    AppendBinaryTree(this->signal_storage, std::move(signal));
+double Environment::getSignalIntensity(Vector3d &position) {
+    double signalIntensity = 0;
+    for (auto i : this->signals) {
+        signalIntensity += i.getIntensity(*this->time_counter, position);
+    }
+    return signalIntensity;
 }
 
-void Environment::ScanSignals() {
-    PreOrderTraverse(this->signal_storage);
+
+void Environment::AppendSignal(Signal &signal) {
+    this->signals.push_back(signal);
 }
+
 
 void Environment::Update() {
     cout << "10" << endl;

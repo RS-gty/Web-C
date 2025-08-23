@@ -9,16 +9,12 @@
 using namespace Eigen;
 
 
-Signal::Signal(Environment &env, double amp, double fre, double phi, string id) {
-    exenv = &env;
+Signal::Signal(double amp, double fre, double phi, string id) {
     amplitude = amp;
     frequency = fre;
     phase = phi;
-    start_frame = *exenv->iter;
     identifier = move(id);
 }
-
-
 
 void Signal::set_origin(Vector3d *pos) {
     position = pos;

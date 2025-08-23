@@ -6,6 +6,7 @@
 #define WEB_ENVIRONMENT_H
 
 #include "../Algorithm/BinaryTree/BinaryTree.h"
+#include "../Signal/Signal.h"
 #include <Eigen/Dense>
 #include <string>
 #include <iostream>
@@ -17,16 +18,17 @@ using namespace std;
 class Environment {
 public:
     explicit Environment(long long int &iter, long double &time_counter);
-    void AppendSignal(string signal);
-    void ScanSignals();
+    void AppendSignal(Signal &signal);
     long double getTime();
+
+    double getSignalIntensity(Vector3d &position);
 
     long long int *iter;
     long double *time_counter;
 
     void Update();
 private:
-    BinaryTree signal_storage = new BinaryNode();
+    vector<Signal> signals = {};
 
 };
 

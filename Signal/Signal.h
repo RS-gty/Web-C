@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <Eigen/Dense>
-#include "../Env/Environment.h"
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
 #include "../utils/utils.h"
@@ -19,7 +18,7 @@ class Signal {
 public:
     Signal();
 
-    Signal(Environment &env, double amp, double fre, double phi, string id);
+    Signal(double amp, double fre, double phi, string id);
 
     ~Signal();
 
@@ -39,8 +38,6 @@ public:
 
 private:
 protected:
-
-    Environment *exenv;
     double amplitude{};
     double frequency{};
     double phase{};

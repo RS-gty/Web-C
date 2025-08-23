@@ -16,7 +16,7 @@ Server::Server(Environment &env, Vector3d pos) {
 
     position_ptr = &position;
 
-    auto *s = new Signal(env, 0, 0, 0, this->identifier);
+    auto *s = new Signal(0, 0, 0, this->identifier);
     signal = s;
     signal->set_origin(this->position_ptr);
     signal->set_starttime(this->env->getTime());
@@ -35,7 +35,7 @@ Server::Server(Environment &env, double x, double y, double z) {
 
     position_ptr = &position;
 
-    auto *s = new Signal(env, 0, 0, 0, this->identifier);
+    auto *s = new Signal(0, 0, 0, this->identifier);
     signal = s;
     signal->set_origin(this->position_ptr);
     signal->set_starttime(this->env->getTime());
