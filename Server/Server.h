@@ -20,10 +20,15 @@ using namespace Eigen;
 class Server {
 public:
     Server(Environment &env, Vector3d pos);
+
     Server(Environment &env, double x, double y, double z);
+
     string get_id();
+
     void SetSignal(double amp, double fre, double phi);
+
     void RandomlizeID();
+
     void BindPosition(Particle &particle);
 
     Vector3d &getPosition();
@@ -49,6 +54,7 @@ private:
 class Host : public Server {
 public:
     Host(Environment &env, Vector3d pos);
+
     Host(Environment &env, double x, double y, double z);
 
     void RegisterServer();

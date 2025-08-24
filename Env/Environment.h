@@ -18,18 +18,22 @@ using namespace std;
 class Environment {
 public:
     explicit Environment(long long int &iter, long double &time_counter);
+
     void AppendSignal(Signal &signal);
+
     long double getTime();
 
     double getSignalIntensity(Vector3d &position);
+
+    double getSignalIntensity(double x, double y, double z);
 
     long long int *iter;
     long double *time_counter;
 
     void Update();
-private:
-    vector<Signal*> signals = {};
 
+private:
+    vector<Signal *> signals = {};
 };
 
 

@@ -16,21 +16,22 @@ class Simulation {
 public:
     explicit Simulation(double delta);
 
-    vector<Particle*> particles;
-    vector<Field*> fields;
+    vector<Particle *> particles;
+    vector<Field *> fields;
     double delta = 0.001;
     long long int iteration = 0;
     double time = 0; // unit:second
 
     void appendField(Field *field);
-    void appendField(const vector<Field*>& fields);
+
+    void appendField(const vector<Field *> &fields);
 
     void appendParticle(Particle &particle);
-    void appendParticle(const vector<Particle*>& particles);
+
+    void appendParticle(const vector<Particle *> &particles);
 
     void update();
 };
-
 
 
 #endif //SIMULATION_H

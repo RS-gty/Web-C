@@ -9,5 +9,3 @@ GravityField::GravityField(double mass, Vector3d position) : Field() {
     this->direction = move(position);
     this->type = 3;
 }
-
-

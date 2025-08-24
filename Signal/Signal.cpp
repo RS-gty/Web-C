@@ -37,7 +37,7 @@ double Signal::getIntensity(long double current_time, Vector3d pos) {
         // this->wavelength equals 1 / this->frequency
         double ext = delta_distance - distance;
         return this->amplitude * sin(2 * numbers::pi * ext * this->frequency + this->phase);
-    } else {return 0;}
+    } else { return 0; }
 }
 
 
@@ -46,18 +46,19 @@ void Signal::fade() {
     delete this;
 }
 
-Vector3d* Signal::get_origin() {
+Vector3d *Signal::get_origin() {
     return position;
 }
+
 Signal *Signal::get_pointer() {
     return this;
 }
+
 Signal::operator string() const {
     stringstream ss;
     ss << this;
     return identifier + ss.str();
 }
-
 
 
 Signal::~Signal() {

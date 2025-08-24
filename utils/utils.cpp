@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string ExtractMemory(string storage){
+string ExtractMemory(string storage) {
     return storage.substr(36);
 };
 

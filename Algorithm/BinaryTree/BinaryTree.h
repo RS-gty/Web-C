@@ -20,14 +20,21 @@ typedef struct node {
 } *BinaryTree, BinaryNode;
 
 void CreateBinaryTree(BinaryTree &Tree, string data);
+
 void CreateBinaryTree(BinaryTree &Tree, string data, BinaryTree &Parent);
+
 void GrowBinaryTree(BinaryTree &Tree, string data);
+
 void AppendBinaryTree(BinaryTree &Tree, string data);
+
 void PreOrderTraverse(BinaryTree Tree);
+
 void Find(BinaryTree Tree, const string &data);
+
 void DeleteData(BinaryTree Tree, const string &data);
 
 BinaryTree SetBinaryTree(vector<string> v_data);
+
 int FindAddress(BinaryTree Tree, const string &data);
 
 #endif//WEB_BINARYTREE_H

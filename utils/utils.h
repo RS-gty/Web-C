@@ -13,27 +13,27 @@
 
 using namespace std;
 
-template <typename T>
+template<typename T>
 
-string MemoryString(T object){
+string MemoryString(T object) {
     void *ss = reinterpret_cast<void *>(&object);
     stringstream s;
     s << ss;
     return s.str();
 };
 
-template <typename T>
+template<typename T>
 
-T MemoryValue(const string& mem){
+T MemoryValue(const string &mem) {
     uintptr_t val = std::stoull(mem, nullptr, 16);
-    T* ptr = reinterpret_cast<T*>(val);
+    T *ptr = reinterpret_cast<T *>(val);
     return *ptr;
 }
 
 
-template <typename T>
+template<typename T>
 
-string RandomlizeStroageString(T object){
+string RandomlizeStroageString(T object) {
     boost::uuids::random_generator generator;
     string id = to_string(generator());
     return id + MemoryString(object);

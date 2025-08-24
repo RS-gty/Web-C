@@ -19,8 +19,17 @@ long double Environment::getTime() {
 
 double Environment::getSignalIntensity(Vector3d &position) {
     double signalIntensity = 0;
-    for (auto i : this->signals) {
+    for (auto i: this->signals) {
         signalIntensity += i->getIntensity(*this->time_counter, position);
+    }
+    return signalIntensity;
+}
+
+double Environment::getSignalIntensity(double x, double y, double z) {
+    double signalIntensity = 0;
+    Vector3d v = Vector3d(x, y, z);
+    for (auto i: this->signals) {
+        signalIntensity += i->getIntensity(*this->time_counter, v);
     }
     return signalIntensity;
 }
@@ -34,5 +43,3 @@ void Environment::AppendSignal(Signal &signal) {
 void Environment::Update() {
     cout << "10" << endl;
 }
-
-

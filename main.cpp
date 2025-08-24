@@ -11,7 +11,6 @@
 #include "Physics/Simulation/Simulation.h"
 
 
-
 #include <iostream>
 #include <thread>
 
@@ -42,7 +41,6 @@ void input_thread(Simulation &sim) {
         } else {
             cout << "Unknown command.\ntype \"help\" to find available commands\n";
         }
-
     }
 }
 
@@ -61,7 +59,6 @@ void simulate_begin(Simulation &sim, lint &iter, ld &timecounter) {
             commands.pop();
             // 处理其他命令...
         }
-
     }
 
     input_handler.join();
@@ -108,6 +105,17 @@ int main() {
     cout << "iteration:" + to_string(simulation.iteration) << endl;
     cout << "position of simulated space station" << endl;
     cout << h1.getPosition() << endl;
+
+    double space[200][200];
+    std::chrono::high_resolution_clock::time_point t0 = std::chrono::high_resolution_clock::now();
+    for (int i = 0; i < 200; i++) {
+        for (int j = 0; j < 200; j++) {
+            space[i][j] = env.getSignalIntensity(static_cast<double>(i) / 10, static_cast<double>(j) / 10, 0);
+        }
+    }
+    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+    cout << t1 - t0 << endl;
+
 
     /*
     Environment env;

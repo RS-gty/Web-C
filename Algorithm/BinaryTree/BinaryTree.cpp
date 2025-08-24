@@ -21,6 +21,7 @@ void CreateBinaryTree(BinaryTree &Tree, string data, BinaryTree &Parent) {
     Tree->right = nullptr;
     Tree->parent = Parent;
 };
+
 void GrowBinaryTree(BinaryTree &Tree, string data) {
     if (Tree->data < data and !(Tree->right)) {
         CreateBinaryTree(Tree->right, data, Tree);
@@ -34,6 +35,7 @@ void GrowBinaryTree(BinaryTree &Tree, string data) {
         }
     }
 }
+
 void AppendBinaryTree(BinaryTree &Tree, string data) {
     if (Tree->newly) {
         CreateBinaryTree(Tree, data);
@@ -42,6 +44,7 @@ void AppendBinaryTree(BinaryTree &Tree, string data) {
         GrowBinaryTree(Tree, data);
     }
 }
+
 void PreOrderTraverse(BinaryTree Tree) {
     if (Tree) {
         cout << Tree->data << endl;
@@ -49,6 +52,7 @@ void PreOrderTraverse(BinaryTree Tree) {
         PreOrderTraverse(Tree->right);
     }
 }
+
 void Find(BinaryTree Tree, const string &data) {
     if (Tree) {
         if (Tree->data == data) {

@@ -10,6 +10,8 @@
 void Host::RegisterServer() {
 }
 
-Host::Host(Environment &env, Vector3d pos) : Server(env, std::move(pos)) {}
-Host::Host(Environment &env, double x, double y, double z) : Server(env, x, y, z) {}
+Host::Host(Environment &env, Vector3d pos) : Server(env, std::move(pos)) {
+}
 
+Host::Host(Environment &env, double x, double y, double z) : Server(env, x, y, z) {
+}

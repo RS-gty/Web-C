@@ -4,11 +4,8 @@
 
 #include "Field.h"
 
-ConstGravityField::ConstGravityField(double strength, Vector3d direction) : Field(){
+ConstGravityField::ConstGravityField(double strength, Vector3d direction) : Field() {
     this->strength = strength;
     this->direction = direction.normalized();
     this->type = 1;
 }
-
-
-

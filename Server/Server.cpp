@@ -21,8 +21,6 @@ Server::Server(Environment &env, Vector3d pos) {
     signal->set_origin(this->position_ptr);
     signal->set_starttime(this->env->getTime());
     env.AppendSignal(*signal);
-
-
 }
 
 
@@ -40,8 +38,6 @@ Server::Server(Environment &env, double x, double y, double z) {
     signal->set_origin(this->position_ptr);
     signal->set_starttime(this->env->getTime());
     env.AppendSignal(*signal);
-
-
 }
 
 void Server::RandomlizeID() {

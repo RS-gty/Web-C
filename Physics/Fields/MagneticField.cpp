@@ -9,6 +9,3 @@ MagneticField::MagneticField(double strength, Vector3d direction) : Field() {
     this->direction = direction.normalized();
     this->type = 2;
 }
-
-
-

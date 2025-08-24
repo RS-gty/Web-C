@@ -23,17 +23,25 @@ public:
     ~Signal();
 
     void passID(string id);
+
     void set_origin(Vector3d *pos);
+
     void set_origin(double x, double y, double z);
+
     void set_properties(double amp, double fre, double phi);
+
     void set_starttime(long double st);
 
     double getIntensity(long double current_time, Vector3d pos);
 
     void fade();
-    Vector3d* get_origin();
+
+    Vector3d *get_origin();
+
     Signal *get_pointer();
+
     operator string() const;
+
     string identifier;
 
 private:
