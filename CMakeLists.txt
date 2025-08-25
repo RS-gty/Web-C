@@ -25,8 +25,6 @@ add_executable(Web25 main.cpp
         Physics/Objects/Particle.h
         Physics/Fields/Field.cpp
         Physics/Fields/Field.h
-        Physics/Simulation/Simulation.cpp
-        Physics/Simulation/Simulation.h
         Physics/Fields/ConstGravityField.cpp
         Physics/Fields/MagneticField.cpp
         Physics/Fields/GravityField.cpp

@@ -7,6 +7,9 @@
 
 #include "../Algorithm/BinaryTree/BinaryTree.h"
 #include "../Signal/Signal.h"
+#include "../Physics/Objects/Particle.h"
+#include "../Physics/Fields/Field.h"
+#include <vector>
 #include <Eigen/Dense>
 #include <string>
 #include <iostream>
@@ -17,7 +20,8 @@ using namespace std;
 
 class Environment {
 public:
-    explicit Environment(long long int &iter, long double &time_counter);
+    explicit Environment(double delta);
+    Environment(Environment &extend, double delta);
 
     void AppendSignal(Signal &signal);
 
@@ -27,13 +31,27 @@ public:
 
     double getSignalIntensity(double x, double y, double z);
 
-    long long int *iter;
-    long double *time_counter;
+    void appendField(Field *field);
+
+    void appendField(const vector<Field *> &fields);
+
+    void appendParticle(Particle &particle);
+
+    void appendParticle(const vector<Particle *> &particles);
 
     void Update();
 
+    long long int getIteration();
+
+    vector<Particle *> particles;
+    vector<Field *> fields;
+    vector<Signal *> signals;
+    double delta = static_cast<double>(1) / 1024;
+    long long int iter = 0;
+    long double time_counter = 0;
+
 private:
-    vector<Signal *> signals = {};
+
 };
 
 

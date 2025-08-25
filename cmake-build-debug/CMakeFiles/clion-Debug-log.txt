@@ -1,4 +1,4 @@
 "D:\SoftWare\jetbrain\CLion 2025.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/SoftWare/jetbrain/CLion 2025.1.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\Projects\C++\Web25 -B D:\Projects\C++\Web25\cmake-build-debug
--- Configuring done (0.8s)
+-- Configuring done (0.9s)
 -- Generating done (0.2s)
 -- Build files have been written to: D:/Projects/C++/Web25/cmake-build-debug

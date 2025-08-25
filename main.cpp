@@ -8,7 +8,6 @@
 #include "utils/utils.h"
 #include "Physics/Objects/Particle.h"
 #include "Physics/Fields/Field.h"
-#include "Physics/Simulation/Simulation.h"
 
 
 #include <iostream>
@@ -23,7 +22,7 @@ atomic<bool> running = true;
 queue<string> commands;
 mutex queue_mutex;
 
-void input_thread(Simulation &sim) {
+void input_thread(Environment &env) {
     string cmd;
     while (running) {
         cout << "Enter command: ";
@@ -35,7 +34,7 @@ void input_thread(Simulation &sim) {
         if (cmd == "help") {
             cout << "Available commands: help, status, exit\n";
         } else if (cmd == "status") {
-            cout << "System is running...\niteration:" + to_string(sim.iteration) << "\n";
+            cout << "System is running...\niteration:" + to_string(env.iter) << "\n";
         } else if (cmd == "exit") {
             running = false;
         } else {
@@ -44,14 +43,12 @@ void input_thread(Simulation &sim) {
     }
 }
 
-void simulate_begin(Simulation &sim, lint &iter, ld &timecounter) {
-    thread input_handler(input_thread, ref(sim));
+void simulate_begin(Environment &env) {
+    thread input_handler(input_thread, ref(env));
 
     while (running) {
         // 主循环的工作
-        sim.update();
-        iter++;
-        timecounter += sim.delta;
+        env.Update();
         // 处理输入命令
         lock_guard<mutex> lock(queue_mutex);
         while (!commands.empty()) {
@@ -87,21 +84,20 @@ int main() {
     MagneticField M1(1, {0, 0, 1});
     GravityField G2(5, {1, 0, 2});
 
-    Environment env(global_iterator, global_time_counter);
+    Environment env(long_fract * 1024);
 
     Host h1(env, 1, -1234, 3);
     h1.SetSignal(1, 2, 0);
 
     h1.BindPosition(p1);
-    Simulation simulation(long_fract * 1024);
-    simulation.appendField(&G2);
-    simulation.appendParticle(p1);
+    env.appendField(&G2);
+    env.appendParticle(p1);
 
-    simulate_begin(simulation, global_iterator, global_time_counter);
+    simulate_begin(env);
 
     cout << env.getSignalIntensity(h1.getPosition()) << endl;
 
-    cout << "iteration:" + to_string(simulation.iteration) << endl;
+    cout << "iteration:" + to_string(env.getIteration()) << endl;
     cout << "position of simulated space station" << endl;
     cout << h1.getPosition() << endl;
 
