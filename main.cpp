@@ -77,6 +77,7 @@ void simulate_begin(Simulation &sim, lint &iter, ld &timecounter) {
 
 lint global_iterator = 0;
 ld global_time_counter = 0; // unit:second
+ld long_fract = static_cast<long double>(1) / static_cast<long double>(1048576);
 
 
 int main() {
@@ -92,9 +93,7 @@ int main() {
     h1.SetSignal(1, 2, 0);
 
     h1.BindPosition(p1);
-
-
-    Simulation simulation(0.001);
+    Simulation simulation(long_fract * 1024);
     simulation.appendField(&G2);
     simulation.appendParticle(p1);
 
