@@ -1,8 +1,8 @@
 # ninja log v6
 237	4418	7777410861116413	CMakeFiles/Web25.dir/Server/Server.cpp.obj	33c372beb783e6f7
-10	2171	7778499888242194	CMakeFiles/Web25.dir/main.cpp.obj	7fd3ebd55d3981ef
+8	2141	7778505985168642	CMakeFiles/Web25.dir/main.cpp.obj	7fd3ebd55d3981ef
 1480	1618	7753394833609000	Web.exe	7054fdccfcb47fe6
-3	1994	7776555473644303	build.ninja	271370bdf0387b64
+3	1994	7778529279321014	build.ninja	271370bdf0387b64
 468	4419	7777410863429948	CMakeFiles/Web25.dir/Server/SubServer.cpp.obj	e7101e41ed946cb7
 974	4420	7777410868488619	CMakeFiles/Web25.dir/Server/Host.cpp.obj	45098abf0729e5e3
 709	4420	7777410865838627	CMakeFiles/Web25.dir/Env/Environment.cpp.obj	d26ac4ffb28ece42
@@ -15,10 +15,4 @@
 3458	6001	7777410893320103	CMakeFiles/Web25.dir/Physics/Fields/ConstGravityField.cpp.obj	2edc34da2a6944ad
 3815	6245	7777410896890264	CMakeFiles/Web25.dir/Physics/Fields/MagneticField.cpp.obj	d172eb4a18cd8459
 4138	6418	7777410900128936	CMakeFiles/Web25.dir/Physics/Fields/GravityField.cpp.obj	854ff4a335171b64
-2171	2925	7778499909851046	Web25.exe	3f0687c4343db37a
-9	2110	7778501118123046	CMakeFiles/Web25.dir/main.cpp.obj	7fd3ebd55d3981ef
-2111	2852	7778501139139835	Web25.exe	3f0687c4343db37a
-8	2192	7778501399152579	CMakeFiles/Web25.dir/main.cpp.obj	7fd3ebd55d3981ef
-2193	2942	7778501420993509	Web25.exe	3f0687c4343db37a
-8	2141	7778505985168642	CMakeFiles/Web25.dir/main.cpp.obj	7fd3ebd55d3981ef
 2142	2883	7778506006504418	Web25.exe	3f0687c4343db37a
