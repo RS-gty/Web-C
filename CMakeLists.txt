@@ -28,4 +28,6 @@ add_executable(Web25 main.cpp
         Physics/Fields/ConstGravityField.cpp
         Physics/Fields/MagneticField.cpp
         Physics/Fields/GravityField.cpp
-        Algorithm/FFT/fft.cpp)
+        Algorithm/FFT/fft.cpp
+        Signal/Listener.cpp
+        Signal/Listener.h)

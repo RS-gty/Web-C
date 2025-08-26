@@ -147,6 +147,13 @@ build CMakeFiles/Web25.dir/Algorithm/FFT/fft.cpp.obj: CXX_COMPILER__Web25_unscan
   OBJECT_DIR = CMakeFiles\Web25.dir
   OBJECT_FILE_DIR = CMakeFiles\Web25.dir\Algorithm\FFT
 
+build CMakeFiles/Web25.dir/Signal/Listener.cpp.obj: CXX_COMPILER__Web25_unscanned_Debug D$:/Projects/C++/Web25/Signal/Listener.cpp || cmake_object_order_depends_target_Web25
+  DEP_FILE = CMakeFiles\Web25.dir\Signal\Listener.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -ID:/Projects/C++/libs/boost_1_88_0 -ID:/Projects/C++/libs/eigen-3.4.0 -ID:/Projects/C++/libs/opencv-4.12.0
+  OBJECT_DIR = CMakeFiles\Web25.dir
+  OBJECT_FILE_DIR = CMakeFiles\Web25.dir\Signal
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Web25
@@ -155,7 +162,7 @@ build CMakeFiles/Web25.dir/Algorithm/FFT/fft.cpp.obj: CXX_COMPILER__Web25_unscan
 #############################################
 # Link the executable Web25.exe
 
-build Web25.exe: CXX_EXECUTABLE_LINKER__Web25_Debug CMakeFiles/Web25.dir/main.cpp.obj CMakeFiles/Web25.dir/Server/Server.cpp.obj CMakeFiles/Web25.dir/Server/SubServer.cpp.obj CMakeFiles/Web25.dir/Env/Environment.cpp.obj CMakeFiles/Web25.dir/Server/Host.cpp.obj CMakeFiles/Web25.dir/Signal/Signal.cpp.obj CMakeFiles/Web25.dir/Algorithm/BinaryTree/BinaryTree.cpp.obj CMakeFiles/Web25.dir/utils/utils.cpp.obj CMakeFiles/Web25.dir/Physics/Objects/Particle.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/Field.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/ConstGravityField.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/MagneticField.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/GravityField.cpp.obj CMakeFiles/Web25.dir/Algorithm/FFT/fft.cpp.obj
+build Web25.exe: CXX_EXECUTABLE_LINKER__Web25_Debug CMakeFiles/Web25.dir/main.cpp.obj CMakeFiles/Web25.dir/Server/Server.cpp.obj CMakeFiles/Web25.dir/Server/SubServer.cpp.obj CMakeFiles/Web25.dir/Env/Environment.cpp.obj CMakeFiles/Web25.dir/Server/Host.cpp.obj CMakeFiles/Web25.dir/Signal/Signal.cpp.obj CMakeFiles/Web25.dir/Algorithm/BinaryTree/BinaryTree.cpp.obj CMakeFiles/Web25.dir/utils/utils.cpp.obj CMakeFiles/Web25.dir/Physics/Objects/Particle.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/Field.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/ConstGravityField.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/MagneticField.cpp.obj CMakeFiles/Web25.dir/Physics/Fields/GravityField.cpp.obj CMakeFiles/Web25.dir/Algorithm/FFT/fft.cpp.obj CMakeFiles/Web25.dir/Signal/Listener.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Web25.dir

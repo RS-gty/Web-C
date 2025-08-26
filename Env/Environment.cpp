@@ -48,6 +48,10 @@ void Environment::AppendSignal(Signal &signal) {
     this->signals.push_back(&signal);
 }
 
+void Environment::AppendListener(Listener &listener) {
+    this->listeners.push_back(&listener);
+}
+
 
 void Environment::appendField(Field *field) {
     this->fields.push_back(field);
@@ -71,6 +75,7 @@ void Environment::appendParticle(const vector<Particle *> &particles) {
 }
 
 void Environment::Update() {
+    // position update
     for (auto &particle: particles) {
         particle->acceleration = Vector3d::Zero();
         for (auto *f_iter: fields) {
@@ -78,6 +83,10 @@ void Environment::Update() {
         }
         particle->velocity += particle->acceleration * delta;
         particle->position += particle->velocity * delta;
+    }
+    // signal receive
+    for (auto &listener : listeners) {
+        listener->Listen();
     }
     this->iter ++;
     this->time_counter += delta;

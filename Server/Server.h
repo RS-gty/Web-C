@@ -9,6 +9,7 @@
 #include "../Signal/Signal.h"
 #include "../utils/utils.h"
 #include "../Physics/Objects/Particle.h"
+#include "../Signal/Listener.h"
 #include <Eigen/Dense>
 #include <string>
 #include <vector>
@@ -31,6 +32,10 @@ public:
 
     void BindPosition(Particle &particle);
 
+    void StorageInit(int max_length);
+
+    double getIntensity();
+
     Vector3d &getPosition();
 
 private:
@@ -40,6 +45,11 @@ protected:
     Vector3d position;
     Vector3d *position_ptr;
     string identifier;
+
+    Listener *listener;
+
+    vector<double> amplitude_storage;
+    int storage_maxlength;
 };
 
 //
