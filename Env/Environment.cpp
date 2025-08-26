@@ -44,12 +44,16 @@ double Environment::getSignalIntensity(double x, double y, double z) {
 }
 
 
-void Environment::AppendSignal(Signal &signal) {
-    this->signals.push_back(&signal);
+void Environment::AppendSignal(Signal *signal) {
+    this->signals.push_back(signal);
 }
 
-void Environment::AppendListener(Listener &listener) {
-    this->listeners.push_back(&listener);
+void Environment::AppendServer(Server *server) {
+    server->setTime(&this->time_counter);
+    server->signal->set_starttime(this->time_counter);
+    this->servers.push_back(server);
+    this->AppendSignal(server->signal);
+
 }
 
 
@@ -85,8 +89,9 @@ void Environment::Update() {
         particle->position += particle->velocity * delta;
     }
     // signal receive
-    for (auto &listener : listeners) {
-        listener->Listen();
+    for (auto &server : servers) {
+        cout << this->getSignalIntensity(1, 2, 3) << endl;
+        server->passIntensity(this->getSignalIntensity(server->getPosition()));
     }
     this->iter ++;
     this->time_counter += delta;

@@ -18,7 +18,7 @@ public:
 
     void setPosition(Vector3d *pos);
 
-    void Listen();
+    void Listen(double i);
 
     void ListeningBegin();
 

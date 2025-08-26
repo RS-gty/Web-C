@@ -86,10 +86,12 @@ int main() {
 
     Environment env(long_fract * 1024);
 
-    Host h1(env, 1, -1234, 3);
+    Host h1(1, -1234, 3);
     h1.SetSignal(1, 2, 0);
 
     h1.BindPosition(p1);
+
+    env.AppendServer(&h1);
     env.appendField(&G2);
     env.appendParticle(p1);
 

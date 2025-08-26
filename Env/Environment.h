@@ -10,6 +10,7 @@
 #include "../Physics/Objects/Particle.h"
 #include "../Physics/Fields/Field.h"
 #include "../Signal/Listener.h"
+#include "../Server/Server.h"
 #include <vector>
 #include <Eigen/Dense>
 #include <string>
@@ -24,9 +25,9 @@ public:
     explicit Environment(double delta);
     Environment(Environment &extend, double delta);
 
-    void AppendSignal(Signal &signal);
+    void AppendSignal(Signal *signal);
 
-    void AppendListener(Listener &listener);
+    void AppendServer(Server *server);
 
     long double getTime();
 
@@ -49,7 +50,7 @@ public:
     vector<Particle *> particles;
     vector<Field *> fields;
     vector<Signal *> signals;
-    vector<Listener *> listeners;
+    vector<Server *> servers;
     double delta = static_cast<double>(1) / 1024;
     long long int iter = 0;
     long double time_counter = 0;

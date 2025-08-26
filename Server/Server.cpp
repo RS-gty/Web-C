@@ -7,9 +7,7 @@
 using namespace std;
 using namespace Eigen;
 
-Server::Server(Environment &env, Vector3d pos) {
-    this->env = &env;
-
+Server::Server(Vector3d pos) {
     this->storage_maxlength = 1024;
 
     identifier = RandomUUID();
@@ -21,22 +19,16 @@ Server::Server(Environment &env, Vector3d pos) {
     auto *s = new Signal(0, 0, 0, this->identifier);
     signal = s;
     signal->set_origin(this->position_ptr);
-    signal->set_starttime(this->env->getTime());
-    env.AppendSignal(*signal);
-
-
+    signal->set_starttime(*this->time);
 
     // listener init
 
     auto *lis = new Listener(this->position, this->amplitude_storage, 1024);
     listener = lis;
-    this->env->AppendListener(*this->listener);
 }
 
 
-Server::Server(Environment &env, double x, double y, double z){
-    this->env = &env;
-
+Server::Server(double x, double y, double z){
     this->storage_maxlength = 1024;
 
     identifier = RandomUUID();
@@ -48,14 +40,12 @@ Server::Server(Environment &env, double x, double y, double z){
     auto *s = new Signal(0, 0, 0, this->identifier);
     signal = s;
     signal->set_origin(this->position_ptr);
-    signal->set_starttime(this->env->getTime());
-    env.AppendSignal(*signal);
+    signal->set_starttime(*this->time);
 
     // listener init
 
     auto *lis = new Listener(this->position, this->amplitude_storage, 1024);
     listener = lis;
-    this->env->AppendListener(*this->listener);
 }
 
 void Server::RandomlizeID() {
@@ -76,10 +66,13 @@ void Server::StorageInit(int max_length) {
     this->storage_maxlength = max_length;
 }
 
-double Server::getIntensity() {
-    return env->getSignalIntensity(this->getPosition());
+void Server::passIntensity(double i) {
+    this->listener->Listen(i);
 }
 
+void Server::setTime(long double *t) {
+    this->time = t;
+}
 
 Vector3d &Server::getPosition() {
     return *this->position_ptr;

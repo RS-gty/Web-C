@@ -15,9 +15,9 @@ void Listener::setPosition(Vector3d *pos) {
 }
 
 
-void Listener::Listen() {
+void Listener::Listen(double i) {
     if (this->is_listening) {
-        this->amplitude_storage->push_back(1.0);
+        this->amplitude_storage->push_back(i);
         if (this->amplitude_storage->size() > this->storage_maxlength) {
             this->amplitude_storage->erase(this->amplitude_storage->begin());
         }
